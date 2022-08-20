@@ -13,6 +13,7 @@ if (isset($_SESSION['Id']) && isset($_SESSION['UserType'])) {
 <body>
 <h1>Hello, <?php echo $_SESSION['UserType']; ?></h1>
 <a href="logout.php">Logout</a>
+<a href="./Registration.php">Add User</a>
 </body>
 </html>
 

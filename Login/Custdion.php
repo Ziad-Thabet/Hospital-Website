@@ -1,7 +1,7 @@
 <?php 
 session_start();
 
-if (isset($_SESSION['Id']) && isset($_SESSION['UserType'])) {
+if (isset($_SESSION['UserType'])) {
 
 ?>
 <!DOCTYPE html>

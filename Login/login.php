@@ -64,6 +64,6 @@ if (empty($email)) {
 }
 	
 }else{
-	header("Location: index.php");
+	header("Location: ../Registration/index.php");
 	exit();
 }
