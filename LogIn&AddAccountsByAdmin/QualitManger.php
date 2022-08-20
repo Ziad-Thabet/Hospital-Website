@@ -1,7 +1,7 @@
 <?php 
 session_start();
 
-if (isset($_SESSION['UserType'])) {
+if (isset($_SESSION['Id']) && isset($_SESSION['UserType'])) {
 
 ?>
 <!DOCTYPE html>
@@ -11,8 +11,10 @@ if (isset($_SESSION['UserType'])) {
 <link rel="stylesheet" type="text/css" href="../css/styleLogin.css">
 </head>
 <body>
+<div class="hh">
 <h1>Hello, <?php echo $_SESSION['UserType']; ?></h1>
-<a href="logout.php">Logout</a>
+<a  href="logout.php">Logout</a>
+</div>
 </body>
 </html>
 
@@ -21,5 +23,4 @@ if (isset($_SESSION['UserType'])) {
 header("Location: index.php");
 exit();
 }
-
 ?>
