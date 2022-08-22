@@ -1,19 +1,22 @@
 <?php
-error_reporting(0);
+session_start();
+require './Connection/db_conn.php';
 $msg = "";
 // If upload button is clicked ...
 if (isset($_POST['upload'])) {
+	$PatienteID=$_POST['PatientID'];
 	$Filename = $_FILES["uploadfile"]["name"];
 	$tempname = $_FILES["uploadfile"]["tmp_name"];
 	$folder = "./images/" . $Filename;
-	$conn = mysqli_connect("localhost", "root", "", "hospital");
+    $PatientID = mysqli_real_escape_string($conn, $PatienteID);
+
 	// Get all the submitted data from the form
-	$sql = "INSERT INTO patient (Filename) VALUES ('$Filename')";
+	$sql = "INSERT INTO id (PatientID,IMG) VALUES ('$PatientID','$folder')";
 	// Execute query
 	mysqli_query($conn, $sql);
 	// Now let's move the uploaded image into the folder: image
 	if (move_uploaded_file($tempname, $folder)) {
-		header("location: ./File/Receptionist.php");
+		// header("location: ./File/Receptionist.php");
 		echo "<h3> Image uploaded successfully!</h3>";
 	} else {
 		echo "<h3> Failed to upload image!</h3>";
@@ -31,10 +34,15 @@ if (isset($_POST['upload'])) {
 	<div id="content">
 		<form method="POST" action="" enctype="multipart/form-data">
 			<div class="form-group">
+				<input class="form-control" type="text" name="PatientID" placeholder="Patient-ID" value="" required/>
+			</div>
+			<div class="form-group">
 				<input class="form-control" type="file" name="uploadfile" value="" required/>
 			</div>
 			<div class="form-group">
 				<button class="btn btn-primary" type="submit" name="upload">UPLOAD</button>
+				<a href="./patient-create.php" class="btn btn-danger float-end" style="position: relative; left: 10px;">Back</a>
+
 			</div>
 		</form>
 	</div>

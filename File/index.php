@@ -6,7 +6,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Login</title>
         <!-- Bootstrap core CSS -->
-        <link rel="icon" href="images/favicon.png"/>
         <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i" rel="stylesheet">  
         <!-- Custom styles for this template -->
         <link href="../css/style.css" rel="stylesheet">

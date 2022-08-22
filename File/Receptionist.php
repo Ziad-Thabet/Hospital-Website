@@ -16,11 +16,11 @@ if (isset($_SESSION['Id']) && isset($_SESSION['UserType'])) {
         <a href="../main.php">
         <button class="btn-one">User</button>
         </a>
-        <a href="#">
-        <button class="btn-one">Patient</button>
+        <a href="../mainpa.php">
+        <button class="btn-one">Information-About-Patient</button>
         </a>
         <a href="#">
-        <button class="btn-one">Doctor</button>
+        <button class="btn-one">Information-About-Doctor</button>
         </a>
         <!-- <a href="../uplodeID.php">
         <button class="btn-one">Uplode-ID</button>

@@ -30,9 +30,9 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>User Details
+                        <h4>Patient Details
                             <a href="./File/Receptionist.php" class="btn btn-danger float-end" style="position: relative; left: 10px;">Back</a>
-                            <a href="user-create.php" class="btn btn-primary float-end">Add User</a>
+                            <a href="./patient-create.php" class="btn btn-primary float-end">Add More Information</a>
                             </h4>
                     </div>
                     <div class="card-body">
@@ -41,32 +41,37 @@
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>UserName</th>
-                                    <th>UserType</th>
-                                    <th>Email</th>
-                                    <!-- <th>Pass</th> -->
+                                    <th>UserID</th>
+                                    <th>CustodianID</th>
+                                    <th>CustodianName</th>
+                                    <th>Phone</th>
+                                    <th>Address</th>
+                                    <!-- <th>ID-Image</th> -->
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php 
-                                    $query = "SELECT * FROM user";
+                                    $query = "SELECT * FROM patient";
                                     $query_run = mysqli_query($conn, $query);
 
                                     if(mysqli_num_rows($query_run) > 0)
                                     {
-                                        foreach($query_run as $User)
+                                        foreach($query_run as $Patient)
                                         {
                                             ?>
                                             <tr>
-                                                <td><?= $User['Id']; ?></td>
-                                                <td><?= $User['UserName']; ?></td>
-                                                <td><?= $User['UserType']; ?></td>
-                                                <td><?= $User['Email']; ?></td>
+                                                <td><?= $Patient['Id']; ?></td>
+                                                <td><?= $Patient['UserId']; ?></td>
+                                                <td><?= $Patient['CustodianId']; ?></td>
+                                                <td><?= $Patient['CustodianName']; ?></td>
+                                                <td><?= $Patient['Phone']; ?></td>
+                                                <td><?= $Patient['Addres']; ?></td>
+                                                <!-- <td><?= $Patient['ImageName']; ?></td> -->
                                                 <td>
-                                                    <a href="User-View.php?id=<?= $User['Id']; ?>" class="btn btn-info btn-sm">View</a>
-                                                    <a href="User-Edit.php?id=<?= $User['Id']; ?>" class="btn btn-success btn-sm">Edit</a>
-                                                    <form action="code.php" method="POST" class="d-inline">
-                                                        <button type="submit" name="Delete_User" value="<?=$User['Id'];?>" class="btn btn-danger btn-sm">Delete</button>
+                                                    <a href="Patient-View.php?id=<?= $Patient['Id']; ?>" class="btn btn-info btn-sm">View</a>
+                                                    <a href="Patient-Edit.php?id=<?= $Patient['Id']; ?>" class="btn btn-success btn-sm">Edit</a>
+                                                    <form action="codep.php" method="POST" class="d-inline">
+                                                        <button type="submit" name="Delete_Patient" value="<?=$Patient['Id'];?>" class="btn btn-danger btn-sm">Delete</button>
                                                     </form>
                                                 </td>
                                             </tr>
