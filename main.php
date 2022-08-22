@@ -31,8 +31,8 @@
                 <div class="card">
                     <div class="card-header">
                         <h4>User Details
-                            <a href="./File/Receptionist.php" class="btn btn-danger float-end" style="position: relative; left: 10px;">Back</a>
                             <a href="user-create.php" class="btn btn-primary float-end">Add User</a>
+                            <a href="./File/Receptionist.php" class="btn btn-danger float-end" style="position: relative; right: 10px;">Back</a>
                             </h4>
                     </div>
                     <div class="card-body">
