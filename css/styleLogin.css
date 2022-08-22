@@ -1,10 +1,10 @@
 body {
 	display: flex;
-  justify-content: flex-start;
-  position: relative;
-  flex-direction: column;
-  margin: 0;
-  background-image: url();
+	justify-content: flex-start;
+	position: relative;
+	flex-direction: column;
+	margin: 0;
+	background-image: url();
 }
 .header {
 	position: sticky;
@@ -15,24 +15,25 @@ body {
 	height: 40px;
 	background-color: rgb(88, 58, 88, 0.2);
 	justify-content: space-between;
-	/* z-index: 3; */
+	z-index: 3;
 	transition: all 1s linear;
 	-webkit-transition: all 1s linear;
 	-moz-transition: all 1s linear;
 	-ms-transition: all 1s linear;
 	-o-transition: all 1s linear;
-  }
-  .header:hover {
+}
+.header:hover {
 	background-color: rgb(88, 58, 88, 1);
 	height: 70px;
-  }
-  
-  .btn-one {
+} 
+.btn-one {
+	justify-content: space-between;
 	border: 3px solid #281826;
+	border-radius: 10px;
 	height: 100%;
 	width: 10vw;
 	background-color: rgb(88, 58, 88, 0.3);
-	font-size: 150%;
+	font-size: 100%;
 	font-family: Josefin Sans;
 	cursor: pointer;
 	transition: all 0.5s ease;
