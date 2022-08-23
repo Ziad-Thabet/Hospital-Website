@@ -19,7 +19,7 @@ if (isset($_SESSION['Id']) && isset($_SESSION['UserType'])) {
         <a href="../mainpa.php">
         <button class="btn-one">Information-About-Patient</button>
         </a>
-        <a href="#">
+        <a href="../DOC/mainD.php">
         <button class="btn-one">Information-About-Doctor</button>
         </a>
         <!-- <a href="../uplodeID.php">

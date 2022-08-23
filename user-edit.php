@@ -54,6 +54,10 @@ require './Connection/db_conn.php';
                                         <input type="text" name="UserType" value="<?=$User['UserType'];?>" class="form-control">
                                     </div>
                                     <div class="mb-3">
+                                        <label>Gender</label>
+                                        <input type="text" name="Gender" value="<?=$User['Gender'];?>" class="form-control">
+                                    </div>
+                                    <div class="mb-3">
                                         <label>Email</label>
                                         <input type="email" name="Email" value="<?=$User['Email'];?>" class="form-control">
                                     </div>

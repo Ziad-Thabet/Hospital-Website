@@ -1,5 +1,5 @@
 <?php
-require './Connection/db_conn.php';
+require '../Connection/db_conn.php';
 ?>
 <!doctype html>
 <html lang="en">
@@ -11,7 +11,7 @@ require './Connection/db_conn.php';
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <title>UserView</title>
+    <title>View Doctor</title>
 </head>
 <body>
 
@@ -21,8 +21,8 @@ require './Connection/db_conn.php';
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>User View Details 
-                            <a href="main.php" class="btn btn-danger float-end">BACK</a>
+                        <h4>Doctor View Details 
+                            <a href="mainD.php" class="btn btn-danger float-end">BACK</a>
                         </h4>
                     </div>
                     <div class="card-body">
@@ -30,46 +30,39 @@ require './Connection/db_conn.php';
                         <?php
                         if(isset($_GET['id']))
                         {
-                            $User_id = mysqli_real_escape_string($conn, $_GET['id']);
-                            $query = "SELECT * FROM user WHERE Id='$User_id' ";
+                            $DOC_id = mysqli_real_escape_string($conn, $_GET['id']);
+                            $query = "SELECT * FROM doctor WHERE Id='$DOC_id' ";
                             $query_run = mysqli_query($conn, $query);
 
                             if(mysqli_num_rows($query_run) > 0)
                             {
-                                $User = mysqli_fetch_array($query_run);
+                                $DOC = mysqli_fetch_array($query_run);
                                 ?>
                                 
                                     <div class="mb-3">
-                                        <label>UserName</label>
+                                        <label>UserID</label>
                                         <p class="form-control">
-                                            <?=$User['UserName'];?>
+                                            <?=$DOC['UserID'];?>
                                         </p>
                                     </div>
                                     <div class="mb-3">
-                                        <label>UserType</label>
+                                        <label>DepartmentType</label>
                                         <p class="form-control">
-                                            <?=$User['UserType'];?>
+                                            <?=$DOC['DepartmentType'];?>
                                         </p>
                                     </div>
                                     <div class="mb-3">
-                                        <label>Gender</label>
+                                        <label>Salary</label>
                                         <p class="form-control">
-                                            <?=$User['Gender'];?>
+                                            <?=$DOC['Salary'];?>
                                         </p>
                                     </div>
                                     <div class="mb-3">
-                                        <label>Email</label>
+                                        <label>Rating</label>
                                         <p class="form-control">
-                                            <?=$User['Email'];?>
+                                            <?=$DOC['Rating'];?>
                                         </p>
                                     </div>
-                                    <div class="mb-3">
-                                        <label>Password</label>
-                                        <p class="form-control">
-                                            <?=$User['Pass'];?>
-                                        </p>
-                                    </div>
-
                                 <?php
                             }
                             else

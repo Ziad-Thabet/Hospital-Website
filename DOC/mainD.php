@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require './Connection/db_conn.php';
+    require '../Connection/db_conn.php';
 ?>
 <!doctype html>
 <html lang="en">
@@ -12,12 +12,12 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <title>User</title>
+    <title>Doctor</title>
 </head>
 <body>
     <style>
         body{
-            background-image: url(./images/Hospital.jpg);
+            background-image: url(../images/Hospital.jpg);
             background-size: cover;
             background-repeat: no-repeat;
         }
@@ -30,9 +30,9 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>User Details
-                            <a href="./File/Receptionist.php" class="btn btn-danger float-end" style="position: relative; left: 10px;">Back</a>
-                            <a href="user-create.php" class="btn btn-primary float-end">Add User</a>
+                        <h4>Doctor Details
+                            <a href="../File/./Receptionist.php" class="btn btn-danger float-end" style="position: relative; left: 10px;">Back</a>
+                            <a href="./DOC-create.php" class="btn btn-primary float-end">Add More Information</a>
                             </h4>
                     </div>
                     <div class="card-body">
@@ -41,34 +41,33 @@
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>UserName</th>
-                                    <th>UserType</th>
-                                    <th>Gender</th>
-                                    <th>Email</th>
-                                    <!-- <th>Pass</th> -->
+                                    <th>UserID</th>
+                                    <th>DepartmentType</th>
+                                    <th>Salary</th>
+                                    <th>Rating</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php 
-                                    $query = "SELECT * FROM user";
+                                    $query = "SELECT * FROM doctor";
                                     $query_run = mysqli_query($conn, $query);
 
                                     if(mysqli_num_rows($query_run) > 0)
                                     {
-                                        foreach($query_run as $User)
+                                        foreach($query_run as $Patient)
                                         {
                                             ?>
                                             <tr>
-                                                <td><?= $User['Id']; ?></td>
-                                                <td><?= $User['UserName']; ?></td>
-                                                <td><?= $User['UserType']; ?></td>
-                                                <td><?= $User['Gender']; ?></td>
-                                                <td><?= $User['Email']; ?></td>
+                                                <td><?= $Patient['Id']; ?></td>
+                                                <td><?= $Patient['UserID']; ?></td>
+                                                <td><?= $Patient['DepartmentType']; ?></td>
+                                                <td><?= $Patient['Salary']; ?></td>
+                                                <td><?= $Patient['Rating']; ?></td>
                                                 <td>
-                                                    <a href="User-View.php?id=<?= $User['Id']; ?>" class="btn btn-info btn-sm">View</a>
-                                                    <a href="User-Edit.php?id=<?= $User['Id']; ?>" class="btn btn-success btn-sm">Edit</a>
-                                                    <form action="code.php" method="POST" class="d-inline">
-                                                        <button type="submit" name="Delete_User" value="<?=$User['Id'];?>" class="btn btn-danger btn-sm">Delete</button>
+                                                    <a href="./DOC-View.php?id=<?= $Patient['Id']; ?>" class="btn btn-info btn-sm">View</a>
+                                                    <a href="./DOC-edit.php?id=<?= $Patient['Id']; ?>" class="btn btn-success btn-sm">Edit</a>
+                                                    <form action="codeD.php" method="POST" class="d-inline">
+                                                        <button type="submit" name="Delete_DOC" value="<?=$Patient['Id'];?>" class="btn btn-danger btn-sm">Delete</button>
                                                     </form>
                                                 </td>
                                             </tr>

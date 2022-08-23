@@ -40,6 +40,10 @@
 						<i class="zmdi zmdi-account"></i>
 					</div>
 					<div class="form-wrapper">
+						<input type="text" placeholder="Gender" name="Gender" class="form-control" >
+						<i class="zmdi zmdi-account"></i>
+					</div>
+					<div class="form-wrapper">
 						<input type="email" placeholder="Email Address" name="Email" class="form-control" >
 						<i class="zmdi zmdi-email"></i>
 					</div>

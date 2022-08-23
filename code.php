@@ -29,10 +29,11 @@ if(isset($_POST['Update_User']))
 
     $UserName = mysqli_real_escape_string($conn, $_POST['UserName']);
     $UserType = mysqli_real_escape_string($conn, $_POST['UserType']);
+    $Gender = mysqli_real_escape_string($conn, $_POST['Gender']);
     $Email = mysqli_real_escape_string($conn, $_POST['Email']);
     $Pass = mysqli_real_escape_string($conn, $_POST['Pass']);
 
-    $query = "UPDATE user SET UserName='$UserName', UserType='$UserType', Email='$Email', Pass='$Pass' WHERE Id='$User_Id'";
+    $query = "UPDATE user SET UserName='$UserName', UserType='$UserType', Gender='$Gender',Email='$Email', Pass='$Pass' WHERE Id='$User_Id'";
     $query_run = mysqli_query($conn, $query);
 
     if($query_run)
@@ -55,10 +56,11 @@ if(isset($_POST['Save_User']))
 {
     $UserName = mysqli_real_escape_string($conn, $_POST['UserName']);
     $UserType = mysqli_real_escape_string($conn, $_POST['UserType']);
+    $Gender = mysqli_real_escape_string($conn, $_POST['Gender']);
     $Email = mysqli_real_escape_string($conn, $_POST['Email']);
     $Pass = mysqli_real_escape_string($conn, $_POST['Pass']);
 
-    $query = "INSERT INTO user (UserName,UserType,Email,Pass) VALUES ('$UserName','$UserType','$Email','$Pass')";
+    $query = "INSERT INTO user (UserName,UserType,Gender,Email,Pass) VALUES ('$UserName','$UserType','$Gender','$Email','$Pass')";
 
     $query_run = mysqli_query($conn, $query);
     if($query_run)
