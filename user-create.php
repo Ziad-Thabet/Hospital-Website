@@ -40,6 +40,10 @@ session_start();
                                 <input type="text" name="UserType" class="form-control">
                             </div>
                             <div class="mb-3">
+                                <label>Gender</label>
+                                <input type="text" name="Gender" class="form-control">
+                            </div>
+                            <div class="mb-3">
                                 <label>Email</label>
                                 <input type="email" name="Email" class="form-control">
                             </div>

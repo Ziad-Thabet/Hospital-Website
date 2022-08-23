@@ -22,6 +22,9 @@ if (isset($_SESSION['Id']) && isset($_SESSION['UserType'])) {
         <a href="../DOC/mainD.php">
         <button class="btn-one">Information-About-Doctor</button>
         </a>
+        <a href="../Department/mainDEP.php">
+        <button class="btn-one">Doctor's Specialty</button>
+        </a>
         <!-- <a href="../uplodeID.php">
         <button class="btn-one">Uplode-ID</button>
         </a>
